@@ -1,0 +1,51 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+.navbar-brand {
+	padding-top: 10px;
+}
+
+
+body {
+  background: url("struumback.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:  750px;
+  margin-top: 60px;
+  background-color: black;
+}
+
+nav {
+	width: 100%;
+}
+
+.navbar {
+	position: fixed;
+	top: 0;
+	z-index: 3;
+}
+.content {
+	padding-top: 50px;
+	width: 60%;
+	margin-left: 20%;
+}
+
+.container {
+
+}
+
+ul {
+	list-style: none;
+}

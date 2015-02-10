@@ -1,0 +1,62 @@
+
+
+
+
+<div id='myPublisherDiv'></div> 
+
+
+
+
+
+
+<script src='//static.opentok.com/webrtc/v2.2/js/opentok.min.js'></script>
+
+<script> 
+$(function(){
+var apiKey = 45137662;
+var sessionId = '<%= @lesson.sessionId %>';
+var token = '<%= @tok_token %>';
+var session = OT.initSession(apiKey, sessionId);
+
+session.on({
+  streamCreated: function(event) { 
+    session.subscribe(event.stream, 'subscribersDiv', {insertMode: 'append'}); 
+  }
+});
+
+session.connect(token, function(error) {
+  if (error) {
+    console.log(error.message);
+  } else {
+    session.publish('myPublisherDiv', {width: 320, height: 240});
+  }
+});
+});
+ </script> 
+
+
+ <div id='myPublisherDiv'></div> 
+    <div id='subscribersDiv'></div> 
+    
+    <script src='//static.opentok.com/webrtc/v2.2/js/opentok.min.js'></script> 
+    <script> 
+    $(function(){
+
+      var apiKey = '45137652';
+      var sessionId = '<%= @lesson.sessionId %>'; 
+      var token = '<%= @tok_token %>';
+      var session = OT.initSession(apiKey, sessionId); 
+      session.on({ 
+          streamCreated: function(event) { 
+            session.subscribe(event.stream, 'subscribersDiv', {insertMode: 'append'}); 
+          } 
+      }); 
+      session.connect(token, function(error) {
+        if (error) {
+          console.log(error.message);
+        } else {
+          session.publish('myPublisherDiv', {width: 600, height: 240}); 
+        }
+      });
+      });
+    </script> 

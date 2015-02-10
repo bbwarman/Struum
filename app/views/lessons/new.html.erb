@@ -1,0 +1,22 @@
+<h2>New Lesson</h2>
+
+  <%= form_for @lesson do |f| %>
+
+  <%= f.datetime_select :date, 
+                        :default => 24.hours.from_now, 
+                        :minute_step => 30 %>
+  
+<article>
+    <label class="amount">
+      
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="One lesson with <%= @teacher.name %>"
+          data-amount="<%= @amount.to_i %>"></script>
+
+
+  <div class="stripe-button-el"><%= f.submit %></div>
+  <% end %>

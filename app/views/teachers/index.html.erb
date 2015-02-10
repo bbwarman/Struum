@@ -1,0 +1,17 @@
+
+
+
+
+<% @teachers.each do |teacher| %>
+  <div class="ui segment teachers-list">
+	<ul>
+		<li><%= link_to teacher.email, teacher_path(teacher) %></li>
+		<li><%= teacher.name %></li>
+		<li><%= image_tag teacher.avatar_url(:thumb).to_s %></li>
+
+	</ul>
+
+  <div class="ui top right attached label">Top Right</div>
+  <a class="ui ribbon label"><%= teacher.genre %></a>
+</div>
+<% end %>

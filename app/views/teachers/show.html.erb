@@ -1,0 +1,17 @@
+<div class="content">
+
+	<ul>
+		<li><h1><%= @teacher.name %><h1></li>
+		<Li><h1><%= @teacher.genre %><h1></li>
+		<Li><h1><%= @teacher.lesson_price %><h1></li>
+		
+
+		<li><%= video_tag @teacher.video_url.to_s %></li>	
+		<li><%= image_tag @teacher.avatar_url(:thumb).to_s %></li>
+
+		
+		<li><%= link_to "Schedule a lesson", new_teacher_lesson_path(@teacher) %></li>
+		<li><%= link_to "Current Lesson", teacher_lessons_path(@teacher) %></li>
+		<%= link_to 'next lesson', lessons_path(@lesson) %>
+	</ml>
+<div>
