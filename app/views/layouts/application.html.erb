@@ -33,6 +33,11 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   </head>
+  <% if !user_signed_in? && !teacher_signed_in? && current_page?('/')  %>
+  <div >
+  <%= render 'layouts/blank_slate.html.erb'%>
+  </div>
+  <% else %>
 
   <body>
     <nav class="navbar navbar navbar-inverse">
@@ -92,4 +97,5 @@
 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   </body>
+  <% end %>
 </html>

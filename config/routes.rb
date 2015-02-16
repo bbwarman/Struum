@@ -8,6 +8,8 @@ Struum::Application.routes.draw do
   root 'teachers#index'
 
   get 'teachers/:id/lessons/new' => 'lessons#new'
+
+  get 'teachers/:id/payments' => 'payments#create'
   
   resources :charges
   resources :lessons

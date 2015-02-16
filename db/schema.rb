@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206145929) do
+ActiveRecord::Schema.define(version: 20150213135154) do
 
   create_table "lessons", force: true do |t|
     t.datetime "created_at"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20150206145929) do
     t.string   "avatar"
     t.string   "video"
     t.integer  "lesson_price"
+    t.string   "stripe_recipient_id"
+    t.string   "type"
   end
 
   add_index "teachers", ["email"], name: "index_teachers_on_email", unique: true
