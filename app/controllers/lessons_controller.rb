@@ -26,7 +26,7 @@
     :description => 'Struum Guitar Lessons',
     :currency    => 'usd'
   )
-      @lesson = @teacher.lessons
+      
       @lesson.save
     redirect_to lesson_path(@lesson)
 

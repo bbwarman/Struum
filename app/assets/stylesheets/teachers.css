@@ -1,0 +1,47 @@
+.teachers-list ul li:nth-child(4) {
+	width: 300px;
+	margin: 0;
+}
+
+.teachers-list ul li {
+	text-align: center;
+}
+
+img {
+	border-radius: 15%;
+}
+
+ul {
+	padding: 0;
+}
+
+a {
+	color: grey;
+}
+
+a:hover {
+	color: lightgrey;
+}
+.bio {
+	float: left;
+	width: 200px;
+}
+
+.random-teachers ul li {
+	display: inline-block;
+	width: 32.5%
+
+}
+
+.random-teachers ul li .segment {
+		height: 250px;
+		;
+}
+
+@media screen 
+and (max-width: 500px) {
+	.random-teachers ul li {
+	display: none;
+
+}
+}
