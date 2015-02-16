@@ -9,6 +9,7 @@
   <% if current_page?('/teachers/sign_up') %>
   <%= f.text_field :lesson_price, :placeholder => "Lesson Price" %>
   <%= f.text_field :genre, :placeholder => "Genre" %>
+  <%= f.text_field :bio, :placeholder => "bio" %>
   <p>Instructor Profile Video</p>
   <%= f.file_field :video %>
   <%= f.select(:type,['Company', 'Individual'], {}, {:class => 'teachers'}) %>

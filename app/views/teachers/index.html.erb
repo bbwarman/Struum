@@ -1,11 +1,59 @@
-<% @teachers.each do |teacher| %>
-<div class="ui segment teachers-list">
+<div class="random-teachers">
 	<ul>
-		<li><%= link_to teacher.email, teacher_path(teacher) %></li>
-		<li><%= teacher.name %></li>
-		<li><%= image_tag teacher.avatar_url(:thumb).to_s %></li>
+		<li>
+			<div class="ui segment">
+					<ul>
+						<li class="teacher-pic"><%= image_tag @teacher_one.avatar_url(:thumb).to_s %></li>
+						<li><h1><%= link_to @teacher_one.name.titleize, teacher_path(@teacher_one) %></h1></li>
+					</ul>
+					<div class="ui top right attached label">
+						<h4><%= @teacher_one.lesson_price %>$</h4>
+						<small>per lesson</small>
+					</div>
+					<div class="ui ribbon label"><%= @teacher_one.genre %></div>
+			</div>
+		</li>
+		<li>
+			<div class="ui segment">
+					<ul>
+						<li class="teacher-pic"><%= image_tag @teacher_two.avatar_url(:thumb).to_s %></li>
+						<li><h1><%= link_to @teacher_two.name.titleize, teacher_path(@teacher_two) %></h1></li>
+					</ul>
+					<div class="ui top right attached label">
+						<h4><%= @teacher_two.lesson_price %>$</h4>
+						<small>per lesson</small>
+					</div>
+					<div class="ui ribbon label"><%= @teacher_two.genre %></div>
+			</div>
+		</li>
+		<li>
+			<div class="ui segment">
+					<ul>
+						<li class="teacher-pic"><%= image_tag @teacher_three.avatar_url(:thumb).to_s %></li>
+						<li><h1><%= link_to @teacher_three.name.titleize, teacher_path(@teacher_one) %></h1></li>
+					</ul>
+					<div class="ui top right attached label">
+						<h4><%= @teacher_three.lesson_price %>$</h4>
+						<small>per lesson</small>
+					</div>
+					<div class="ui ribbon label"><%= @teacher_three.genre %></div>
+			</div>
+		</li>		
+		
 	</ul>
-  	<div class="ui top right attached label">Top Right</div>
-  	<a class="ui ribbon label"><%= teacher.genre %></a>
 </div>
+
+<% @teachers.each do |teacher| %>
+	<div class="ui segment teachers-list">
+		<ul>
+			<li class="teacher-pic"><%= image_tag teacher.avatar_url(:small).to_s %></li>
+			<li><h1><%= link_to teacher.name.titleize, teacher_path(teacher) %></h1></li>
+			<li><p><h4>Bio: </h4> <%= truncate(teacher.bio, :length => 60 ) %></p></li>
+		</ul>
+		<div class="ui top right attached label">
+			<h4><%= teacher.lesson_price %>$</h4>
+			<small>per lesson</small>
+		</div>
+		<div class="ui ribbon label"><%= teacher.genre %></div>
+	</div>
 <% end %>
