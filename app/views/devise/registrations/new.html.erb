@@ -11,6 +11,7 @@
   <%= f.text_field :genre, :placeholder => "Genre" %>
   <p>Instructor Profile Video</p>
   <%= f.file_field :video %>
+  <%= f.select(:type,['Company', 'Individual'], {}, {:class => 'teachers'}) %>
   <% end %>
   Profile Picture
   <%= f.file_field :avatar %>
@@ -21,3 +22,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+

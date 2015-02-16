@@ -13,7 +13,7 @@ class TeachersController < ApplicationController
 	end
 
 	def create
-		
+	
 	end
 
 private 
