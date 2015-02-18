@@ -1,3 +1,4 @@
+<% if @teacher_one && @teacher_two && @teacher_three %>
 <div class="random-teachers">
 	<ul>
 		<li>
@@ -42,7 +43,7 @@
 		
 	</ul>
 </div>
-
+<% end %>
 <% @teachers.each do |teacher| %>
 	<div class="ui segment teachers-list">
 		<ul>

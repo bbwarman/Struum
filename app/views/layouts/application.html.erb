@@ -60,18 +60,24 @@
             <% if current_user || current_teacher %>
             <li><%= link_to "Sign out", destroy_session_path(current_user || current_teacher), :method => :delete %></li>
     
-            <% end %>
+            
             <li role="presentation" class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-    <span class="glyphicon glyphicon-cog"></span><span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu" role="menu">
-      <a href="/"><li>Account</li></a>
-      <a href="/"><li>Lesson</li></a>
-    </ul>
-  </li>
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                <span class="glyphicon glyphicon-cog"></span><span class="caret"></span>
+              </a>
+                <ul class="dropdown-menu" role="menu">
+                  <%= link_to 'Account', edit_user_registration_path || edit_teacher_registration_path %>
+                  <% if current_teacher %>
+                  <%= link_to 'Lessons', teacher_lesson_path %>
+                  <%= link_to 'Payments', teacher_new_payment_path %>
+                  <% end %>
+                  <% if current_user %>
+                  <%= link_to 'Lessons', user_lesson_path %>
+                  <% end %>
+                </ul>
+            </li>
+            <% end %>
           </ul>  
-          <ul
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
     </nav><!-- /.navbar -->

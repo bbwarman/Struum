@@ -1,21 +1,27 @@
 Struum::Application.routes.draw do
   devise_for :users
-  devise_for :teachers
+  devise_for :teachers do
+     resources :payments
+     resources :lessons
+  end 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'teachers#index'
 
-  get 'teachers/:id/lessons/new' => 'lessons#new'
+  
 
-  get 'teachers/:id/payments' => 'payments#create'
   
   resources :charges
-  resources :lessons
-  resources :users 
-  resources :teachers do
+  resources :payments
+  resources :users do
     resources :lessons
+  end
+
+
+  resources :teachers do
+    
   end  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
