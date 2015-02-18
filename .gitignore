@@ -17,4 +17,5 @@
 
 *.mp4
 public/*.jpg
+*.lock
 
